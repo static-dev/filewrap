@@ -1,9 +1,12 @@
 const path = require('path')
 
 module.exports = class File {
-  constructor (root, p) {
+  constructor (root, _p) {
+    let p = path.normalize(_p)
+    if (p.match(root)) p = p.replace(root, '')
+    if (p[0] === path.sep) p = p.substring(1)
     this.absolute = path.join(root, p)
-    this.relative = path.normalize(p)
+    this.relative = p
   }
 }
 

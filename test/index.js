@@ -1,10 +1,34 @@
 const test = require('ava')
 const File = require('..')
 
-test('exposes absolute and relative paths', (t) => {
+test('can be initialized with relative path', (t) => {
   const f = new File('/root', 'file.txt')
-  t.truthy(f.relative, 'file.txt')
-  t.truthy(f.absolute, '/root/file.txt')
+  t.truthy(f.relative === 'file.txt')
+  t.truthy(f.absolute === '/root/file.txt')
+})
+
+test('can be initialized with an absolute path', (t) => {
+  const f = new File('/root', '/root/file.txt')
+  t.truthy(f.relative === 'file.txt')
+  t.truthy(f.absolute === '/root/file.txt')
+})
+
+test('root with trailing slash still resolves correctly', (t) => {
+  const f = new File('/root/', '/root/file.txt')
+  const f2 = new File('/root/', 'file.txt')
+  t.truthy(f.relative === 'file.txt')
+  t.truthy(f.absolute === '/root/file.txt')
+  t.truthy(f2.relative === 'file.txt')
+  t.truthy(f2.absolute === '/root/file.txt')
+})
+
+test('path with leading slash still resolves correctly', (t) => {
+  const f = new File('/root', '/file.txt')
+  const f2 = new File('/root/', '/file.txt')
+  t.truthy(f.relative === 'file.txt')
+  t.truthy(f.absolute === '/root/file.txt')
+  t.truthy(f2.relative === 'file.txt')
+  t.truthy(f2.absolute === '/root/file.txt')
 })
 
 test('array map helpers work', (t) => {

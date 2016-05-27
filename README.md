@@ -26,6 +26,16 @@ f.relative // personal-site/index.html
 f.absolute // /Users/doge/projects/personal-site/index.html
 ```
 
+If you are starting with an absolute path, you can initialize with the absolute path in the same way, filewrap will figure out the relative path for you and make sure it's formatted consistently.
+
+```js
+const File = require('filewrap')
+
+const f = new File('/Users/doge/projects', '/Users/doge/projects/personal-site/index.html')
+f.relative // personal-site/index.html
+f.absolute // /Users/doge/projects/personal-site/index.html
+```
+
 Now if you have an array of these wrapped files, you may want to quickly unwrap them all into relative or absolute paths. Filewrap also exposes a couple convenient helpers that make this clear and simple:
 
 ```js
