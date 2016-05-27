@@ -36,6 +36,10 @@ f.relative // personal-site/index.html
 f.absolute // /Users/doge/projects/personal-site/index.html
 ```
 
+Note that your relative path will _never_ include a leading slash no matter how you initialize, so you can count on this being consistent. And your absolute path will be the `path.join` result of your root and relative paths. Platform-specific directory dividers will always be fully respected.
+
+#### Map Helpers
+
 Now if you have an array of these wrapped files, you may want to quickly unwrap them all into relative or absolute paths. Filewrap also exposes a couple convenient helpers that make this clear and simple:
 
 ```js
