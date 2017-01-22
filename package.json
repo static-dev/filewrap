@@ -8,10 +8,10 @@
   },
   "bugs": "https://github.com/static-dev/filewrap/issues",
   "devDependencies": {
-    "ava": "0.14.x",
+    "ava": "~0.17.0",
     "coveralls": "2.x",
-    "nyc": "6.x",
-    "standard": "7.x"
+    "nyc": "^10.1.2",
+    "standard": "^8.6.0"
   },
   "engines": {
     "node": ">= 6.0.0"
