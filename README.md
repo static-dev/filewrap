@@ -1,5 +1,7 @@
 # Filewrap
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/static-dev/filewrap.svg)](https://greenkeeper.io/)
+
 [![npm](http://img.shields.io/npm/v/filewrap.svg?style=flat)](https://badge.fury.io/js/filewrap) [![tests](http://img.shields.io/travis/static-dev/filewrap/master.svg?style=flat)](https://travis-ci.org/static-dev/filewrap) [![dependencies](http://img.shields.io/david/static-dev/filewrap.svg?style=flat)](https://david-dm.org/static-dev/filewrap) [![coverage](http://img.shields.io/coveralls/static-dev/filewrap.svg?style=flat)](https://coveralls.io/github/static-dev/filewrap)
 
 A light wrapper for files to make absolute and relative paths easier
