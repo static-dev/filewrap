@@ -3,7 +3,7 @@ const path = require('path')
 module.exports = class File {
   constructor (root, _p) {
     let p = path.normalize(_p)
-    if (p.match(root)) p = p.replace(root, '')
+    if (p.indexOf(root) > -1) p = p.replace(root, '')
     if (p[0] === path.sep) p = p.substring(1)
     this.absolute = path.join(root, p)
     this.relative = p
